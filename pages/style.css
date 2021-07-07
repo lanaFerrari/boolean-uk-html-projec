@@ -98,7 +98,6 @@ ul {
 .two-c-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 0.5rem;
 }
 
 .three-c-grid-2 {
@@ -186,9 +185,6 @@ ul {
   border-radius: 5px;
   border: solid 1px #ff7021;
   padding: 1rem;
-
-  -webkit-box-shadow: 0px 0px 19px -4px #dfe4e9;
-  box-shadow: 0px 0px 19px -4px grey;
 }
 
 .header-form {
@@ -200,7 +196,7 @@ ul {
 .main-form {
   padding: 1rem 2rem 1.3rem 2rem;
   display: grid;
-  gap: 0.7rem;
+  gap: 2rem;
 }
 
 .title-main {
@@ -252,6 +248,13 @@ ul {
   border-top: 1px solid #ff7021;
 }
 
+.expand {
+  width: 100%;
+}
+
+.border-button {
+  border: 1px solid #ff7021;
+}
 /* Effects*/
 
 a:hover {
