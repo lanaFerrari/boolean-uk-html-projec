@@ -28,14 +28,39 @@ ul {
   padding: 0;
 }
 
+aside {
+  height: 100vh;
+}
+
+header {
+  overflow: hide;
+}
+
+.main {
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+}
+
 /* Colours and styles*/
 
 .grey-bg {
   background-color: #dfdfdf;
 }
 
+.light-grey-bg {
+  background-color: #eaecef;
+}
+
 .orange-color {
   color: #ff7021;
+}
+
+.grey-color {
+  color: #666666;
+}
+
+.darker-grey-color {
+  color: #313234;
 }
 
 .black-color,
@@ -59,6 +84,10 @@ ul {
 }
 .ft-x-sml {
   font-size: 10px;
+}
+
+.ft-x-sml-2 {
+  font-size: 13px;
 }
 
 .ft-sml {
@@ -117,6 +146,16 @@ ul {
   grid-template-columns: repeat(5, minmax(30px, 30px));
   gap: 1rem;
 }
+
+.two-c-grid-internal-pages {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.three-c-grid-ip {
+  display: grid;
+  grid-template-columns: 1fr 30px 180px;
+}
 /* Classes*/
 
 .center-w {
@@ -132,6 +171,22 @@ ul {
   width: 120px;
 }
 
+.logo-frame-2 {
+  width: 145px;
+}
+
+.icon-frame-internal-page {
+  max-width: 23px;
+}
+
+.frame-profile-pic {
+  width: 40px;
+}
+
+.frame-icon-expand {
+  max-width: 20px;
+}
+
 .background-img {
   background-image: url(/pics/pic-3-sml.jpg);
 }
@@ -141,25 +196,35 @@ ul {
 }
 
 .padding-top {
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 .padding-top-2 {
   padding-top: 1rem;
 }
 .padding-bottom {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
+}
+
+.padding-bottom-2 {
+  padding-bottom: 1rem;
 }
 
 .padding-bg-img {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.padding-bottom-2 {
-  padding-bottom: 1rem;
-}
 
 .padding-right {
   padding-right: 1rem;
+}
+
+.padding-internal-pages {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.padding-box-1rem {
+  padding: 1rem 0 1rem 0;
 }
 .align-i-center {
   display: grid;
@@ -169,6 +234,15 @@ ul {
 .justify-i-center {
   display: grid;
   justify-items: center;
+}
+
+.justify-i-end {
+  display: grid;
+  justify-items: flex-end;
+}
+.justify-i-start {
+  display: grid;
+  justify-items: flex-end;
 }
 
 .background-img {
@@ -248,6 +322,9 @@ ul {
   border-top: 1px solid #ff7021;
 }
 
+.border-right {
+  border-right: 1px solid #ff7021;
+}
 .expand {
   width: 100%;
 }
@@ -255,8 +332,128 @@ ul {
 .border-button {
   border: 1px solid #ff7021;
 }
+
+.collapsible {
+  background-color: white;
+  color: #313234;
+  cursor: pointer;
+  padding: 0.5rem;
+  max-width: 90%;
+  border: none;
+  border-radius: 2rem;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.display-none {
+  display: none;
+}
 /* Effects*/
+
+.scroll-bar {
+  .scroll-section {
+    height: calc(100vh - 70px);
+
+    /* overflow: scroll; */
+    overflow-y: scroll;
+  }
+}
 
 a:hover {
   text-decoration: underline;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #eaecef;
+}
+
+/* Experiments*/
+
+.nav {
+  float: none;
+  clear: both;
+  width: 30%;
+  margin: 10% auto;
+  background: #eee;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav li {
+  float: none;
+  width: 100%;
+}
+
+nav li a {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border-left: 5px solid;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: #444;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+nav li a:hover {
+  border-bottom: 0px;
+  color: #fff;
+}
+nav li:first-child a {
+  border-left: 10px solid #3498db;
+}
+nav li:nth-child(2) a {
+  border-left: 10px solid #ffd071;
+}
+nav li:nth-child(3) a {
+  border-left: 10px solid #f0776c;
+}
+nav li:last-child a {
+  border-left: 10px solid #1abc9c;
+}
+
+nav li a:after {
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0px;
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  z-index: -1;
+}
+
+nav li a:hover:after {
+  width: 100%;
+}
+nav li:first-child a:after {
+  background: #3498db;
+}
+nav li:nth-child(2) a:after {
+  background: #ffd071;
+}
+nav li:nth-child(3) a:after {
+  background: #f0776c;
+}
+
+nav li:last-child a:after {
+  background: #1abc9c;
 }
