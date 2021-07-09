@@ -29,7 +29,7 @@ ul {
 }
 
 aside {
-  height: 100vh;
+  max-height: 100vh;
 }
 
 header {
@@ -110,6 +110,14 @@ header {
   border-radius: 0.5rem;
   padding: 0.7rem 1.3rem 0.7rem 1.3rem;
   border: none;
+}
+
+.max-width {
+  max-width: 150px;
+}
+
+.max-width-2 {
+  max-width: 180px;
 }
 /* Grids*/
 
@@ -357,11 +365,24 @@ header {
 .display-none {
   display: none;
 }
+
+.frame-card {
+  max-width: 200px;
+}
 /* Effects*/
 
 .scroll-bar {
   .scroll-section {
     height: calc(100vh - 70px);
+
+    /* overflow: scroll; */
+    overflow-y: scroll;
+  }
+}
+
+.scroll-sml {
+  .scroll-section {
+    height: calc(100vh - 65%);
 
     /* overflow: scroll; */
     overflow-y: scroll;
